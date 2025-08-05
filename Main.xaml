@@ -1,0 +1,321 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugagf="clr-namespace:UiPath.GSuite.Activities.Gmail.Filters;assembly=UiPath.GSuite.Activities" xmlns:ugagm="clr-namespace:UiPath.GSuite.Activities.Gmail.Models;assembly=UiPath.GSuite.Activities" xmlns:ugagt="clr-namespace:UiPath.GSuite.Activities.Gmail.Triggers;assembly=UiPath.GSuite.Activities" xmlns:ugam="clr-namespace:UiPath.GSuite.Activities.Models;assembly=UiPath.GSuite.Activities" xmlns:ugdm="clr-namespace:UiPath.GSuite.Drive.Models;assembly=UiPath.GSuite" xmlns:uggm="clr-namespace:UiPath.GSuite.Gmail.Models;assembly=UiPath.GSuite" xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="112">
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>System</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Services.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.GSuite.Sheets.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>UiPath.GSuite.Models</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Models</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.GSuite.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Filters</x:String>
+      <x:String>UiPath.GSuite.Activities.Filters</x:String>
+      <x:String>UiPath.GSuite.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Utilities</x:String>
+      <x:String>UiPath.Productivity.Activities.Diagnostics</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Triggers</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Contracts</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ugm:GmailMessage" Name="email">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">NewEmailReceived_1</x:String>
+            <x:String x:Key="SourcePropertyName">Result</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="uggm:GmailAttachmentLocalItem[]" Default="[new UiPath.GSuite.Gmail.Models.GmailAttachmentLocalItem() {  }]" Name="attachments">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">DownloadAttachmentsConnections_1</x:String>
+            <x:String x:Key="SourcePropertyName">NewResult</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="ugdm:GDriveRemoteItem" Name="firstFile">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">UploadFilesConnections_1</x:String>
+            <x:String x:Key="SourcePropertyName">FirstResult</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="readCell">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ReadCellConnections`1_1</x:String>
+            <x:String x:Key="SourcePropertyName">Result</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="textValue">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">NGetText_1</x:String>
+            <x:String x:Key="SourcePropertyName">TextString</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ugagt:NewEmailReceived ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" JobData="{x:Null}" AuthScopesInvalid="False" BrowserFolderId="INBOX" BrowserFolderName="Inbox" ConnectionId="d65b774c-a227-4189-b9c5-34a3a0477e5d" DisplayName="Trigger when a specific email is received in the Inbox" FilterExpression="(ParentFolders[?ID=='INBOX'])&amp;&amp;((contains(From.Email,'automation-first@uipath.com')))" sap2010:WorkflowViewState.IdRef="NewEmailReceived_1" IncludeAttachments="False" MarkAsRead="True" Result="[email]" UiPathEvent="[UiPathEvent]" UiPathEventConnector="[UiPathEventConnector]" UiPathEventObjectId="[UiPathEventObjectId]" UiPathEventObjectType="[UiPathEventObjectType]" UseConnectionService="True" WithAttachmentsOnly="False">
+      <ugagt:NewEmailReceived.Filter>
+        <ugagf:TriggerMailFilterCollection LogicalOperator="And">
+          <ugagf:TriggerMailFilterCollection.Filters>
+            <ugagf:TriggerMailFilterElement ArrayStringOperator="Contains" BodyOperator="Contains" CollectionFilterOperator="In" Criteria="From" SenderRecipientOperator="Contains" StringOperator="Contains" StringValue="automation-first@uipath.com" TypeValue="Email" />
+          </ugagf:TriggerMailFilterCollection.Filters>
+        </ugagf:TriggerMailFilterCollection>
+      </ugagt:NewEmailReceived.Filter>
+      <ugagt:NewEmailReceived.Folder>
+        <ugagm:TriggerFolderArgument ConnectionDescriptor="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" ConnectionKey="d65b774c-a227-4189-b9c5-34a3a0477e5d" InputMode="Browse">
+          <ugagm:TriggerFolderArgument.Backup>
+            <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </ugagm:TriggerFolderArgument.Backup>
+        </ugagm:TriggerFolderArgument>
+      </ugagt:NewEmailReceived.Folder>
+    </ugagt:NewEmailReceived>
+    <uga:DownloadAttachmentsConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterByFileNames="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="d65b774c-a227-4189-b9c5-34a3a0477e5d" DisplayName="Download Email Attachments" Email="[email]" ExcludeInlineAttachments="False" sap2010:WorkflowViewState.IdRef="DownloadAttachmentsConnections_1" NewResult="[attachments]" SearchMode="UseSimple" UseConnectionService="True" />
+    <uga:UploadFilesConnections AllResults="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DestinationFolder="{x:Null}" FilesList="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" ManualFolderId="{x:Null}" OverwriteExistingFile="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" BrowseFolderId="https://drive.google.com/drive/folders/1gbUUMpRI0z-B_XgUylVaMY0S_Q8wp7YR" ConflictResolution="Replace" ConnectionId="8c920574-3130-4e75-b9bb-c3505b57a679" Convert="True" DisplayName="Upload Files" FilesInputMode="MultipleByVariable" FirstResult="[firstFile]" FolderInputMode="Browse" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_1" MultipleFilesToUpload="[attachments]" SaveToFolderName="Email Attachments " UseConnectionService="True">
+      <uga:UploadFilesConnections.FilesBackup>
+        <usau:BackupSlot x:TypeArguments="ugade:FilesInputMode" StoredValue="MultipleByVariable">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugade:FilesInputMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:UploadFilesConnections.FilesBackup>
+      <uga:UploadFilesConnections.Folder>
+        <ugam:DriveItemArgument ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://drive.google.com/drive/folders/1gbUUMpRI0z-B_XgUylVaMY0S_Q8wp7YR" ConnectionKey="8c920574-3130-4e75-b9bb-c3505b57a679" FriendlyName="Email Attachments " FullPathHint="My Drive/RPA Projects/Course 1/Email Attachments " InputMode="Browse">
+          <ugam:DriveItemArgument.Backup>
+            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                  <InArgument x:TypeArguments="x:String">root</InArgument>
+                  <InArgument x:TypeArguments="x:String">My Drive</InArgument>
+                </scg:List>
+                <scg:List x:TypeArguments="x:Object" x:Key="UseExisting" Capacity="1">
+                  <x:Null />
+                </scg:List>
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </ugam:DriveItemArgument.Backup>
+          <ugam:DriveItemArgument.ParentIdFullPathHint>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ugam:DriveItemArgument.ParentIdFullPathHint>
+        </ugam:DriveItemArgument>
+      </uga:UploadFilesConnections.Folder>
+    </uga:UploadFilesConnections>
+    <uga:ReadCellConnections x:TypeArguments="x:String" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="Invoice 1" BrowserItemId="1n7tyPfbXlQ6hZmv8GgSwuH5tl9e3gQFu_1ngXFiU37E" Cell="E8" CellValueType="Text" ConnectionId="b3f19c6b-0a1a-4dbb-983c-80b29e1e2be7" DisplayName="Read Cell" HideCell="False" sap2010:WorkflowViewState.IdRef="ReadCellConnections`1_1" ItemSelectionMode="Browse" RangeLocation="Invoice" Result="[readCell]" UseConnectionService="True" WhatToRead="Values">
+      <uga:ReadCellConnections.FileIdBackup>
+        <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="Browse">
+          <usau:BackupSlot.BackupValues>
+            <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+              <x:Null />
+              <x:Null />
+            </scg:List>
+            <scg:List x:TypeArguments="x:Object" x:Key="UseExisting" Capacity="1">
+              <x:Null />
+            </scg:List>
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:ReadCellConnections.FileIdBackup>
+      <uga:ReadCellConnections.Item>
+        <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID1}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="1n7tyPfbXlQ6hZmv8GgSwuH5tl9e3gQFu_1ngXFiU37E" ConnectionKey="b3f19c6b-0a1a-4dbb-983c-80b29e1e2be7" FriendlyName="Invoice 1" FullPathHint="My Drive/RPA Projects/Course 1/Email Attachments /Invoice 1" InputMode="Browse">
+          <ugam:DriveItemArgument.ParentIdFullPathHint>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ugam:DriveItemArgument.ParentIdFullPathHint>
+        </ugam:DriveItemArgument>
+      </uga:ReadCellConnections.Item>
+    </uga:ReadCellConnections>
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser: ACME System 1 - Dashboard" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="703c1455-7feb-4374-b577-99d3c44ec532" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Part 2'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="703c1455-7feb-4374-b577-99d3c44ec532" Text="[string.Format(&quot;{0}&quot;, readCell)]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/first-automation/vendor" CVScreenId="fbd65716-a722-4db5-8cea-3989cdf7b813" CvElementArea="155, 379, 280, 67" CvType="InputBox" DesignTimeRectangle="157, 380, 277, 64" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='INPUT' id='vendor' type='email' class='' placeholder='Type the client code' aaname='' /&gt;" Guid="31108097-2ebe-4329-b3d1-44e734ee25cc" InformativeScreenshot="f11b9f5dc3fa01308ae6cb902f1c2a33.png" ScopeSelectorArgument="&lt;html title='ACME System 1 - Dashboard' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="fbd65716-a722-4db5-8cea-3989cdf7b813" CvTextArea="431, 245, 3, 18" CvTextArgument="2" CvType="Text" DesignTimeRectangle="317, 230, 116, 40" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Part 2' type='' class='' check:innerText='PART 2' /&gt;" Guid="d5364b72-ee5a-47bc-8a3a-ae2b7ff26fe1" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON submitButton'" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="703c1455-7feb-4374-b577-99d3c44ec532" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/first-automation/vendor" CVScreenId="01db8bff-a70f-4d32-b71c-0abbc3d9ad80" CvElementArea="420, 377, 65, 69" CvType="Button" DesignTimeRectangle="421, 379, 63, 67" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' id='submitButton' type='submit' class='' aaname='' /&gt;" Guid="3f088dd5-4d6d-4649-a4a4-ecc50082ea82" InformativeScreenshot="4156d1fcb5538c4f7c274321ea5dd79a.png" ScopeSelectorArgument="&lt;html title='ACME System 1 - Dashboard' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="01db8bff-a70f-4d32-b71c-0abbc3d9ad80" CvTextArea="349, 245, 73, 19" CvTextArgument="PART 2" CvType="Text" DesignTimeRectangle="306, 230, 116, 40" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Part 2' type='' class='' check:innerText='PART 2' /&gt;" Guid="89ed4354-023c-4e8c-84a1-b5c1793c90d8" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Discount'" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="703c1455-7feb-4374-b577-99d3c44ec532" TextString="[textValue]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/first-automation/vendor" CVScreenId="645076df-b531-4402-8f86-f4fbc40243c3" CvTextArea="143, 483, 110, 48" CvType="AnyWordGroup" DesignTimeRectangle="146, 482, 598, 175" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='H2' id='discount' type='' class='discount no-discount' /&gt;" Guid="d8311eba-bd6b-4ad0-84b1-5ad5f56fea0a" InformativeScreenshot="0769ce6acce401beb44cc558215c76a4.png" ScopeSelectorArgument="&lt;html title='ACME System 1 - Dashboard' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="645076df-b531-4402-8f86-f4fbc40243c3" CvTextArea="145, 411, 157, 31" CvTextArgument="Discount" CvType="Text" DesignTimeRectangle="146, 408, 157, 44" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='H1' parentid='product-card' type='' class='' aaname='Discount' check:innerText='Discount' /&gt;" Guid="c9d15cfa-a96e-4ed9-93a6-8f97da427757" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uga:WriteCellConnections BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" AuthScopesInvalid="False" Cell="E18" ConnectionId="b3f19c6b-0a1a-4dbb-983c-80b29e1e2be7" DisplayName="Write Cell" HideCell="False" sap2010:WorkflowViewState.IdRef="WriteCellConnections_1" ItemSelectionMode="UseExisting" RangeLocation="Invoice" Spreadsheet="[firstFile]" UseConnectionService="True" WhatToWrite="[textValue]">
+              <uga:WriteCellConnections.FileIdBackup>
+                <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID2" StoredValue="UseExisting">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                      <InArgument x:TypeArguments="x:String">1n7tyPfbXlQ6hZmv8GgSwuH5tl9e3gQFu_1ngXFiU37E</InArgument>
+                      <InArgument x:TypeArguments="x:String">Invoice 1</InArgument>
+                    </scg:List>
+                    <scg:List x:TypeArguments="x:Object" x:Key="UseExisting" Capacity="1">
+                      <x:Null />
+                    </scg:List>
+                    <scg:List x:TypeArguments="x:Object" x:Key="UrlOrId" Capacity="1">
+                      <InArgument x:TypeArguments="x:String">[firstFile]</InArgument>
+                    </scg:List>
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </uga:WriteCellConnections.FileIdBackup>
+              <uga:WriteCellConnections.Item>
+                <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID2}" BrowserId="{x:Null}" ConnectionDescriptor="{x:Null}" FriendlyName="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" ConnectionKey="b3f19c6b-0a1a-4dbb-983c-80b29e1e2be7" Existing="[firstFile]" FullPathHint="My Drive/RPA Projects/Course 1/Email Attachments /Invoice 1" InputMode="UseExisting">
+                  <ugam:DriveItemArgument.ParentIdFullPathHint>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </ugam:DriveItemArgument.ParentIdFullPathHint>
+                </ugam:DriveItemArgument>
+              </uga:WriteCellConnections.Item>
+            </uga:WriteCellConnections>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" InformativeScreenshot="b15227696bcf8b6a7980a0fb602ed94a.png" Selector="&lt;html title='ACME System 1 - Dashboard' app='chrome.exe' /&gt;" Url="https://acme-test.uipath.com/first-automation/vendor" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" Attachments="[Enumerable.Repeat(firstFile, 1).ToList()]" AuthScopesInvalid="False" Body="&lt;p&gt;Hello,&amp;nbsp;&lt;br&gt;Kindly find the attached the updated invoice with client's discount applied.&lt;/p&gt;" ConnectionId="d65b774c-a227-4189-b9c5-34a3a0477e5d" DisplayName="Send Email" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="Updated Invoice" To="[New String(){&quot;automation-first@uipath.com&quot;}]" UseConnectionService="True">
+      <uga:SendEmailConnections.AttachmentsBackup>
+        <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:SendEmailConnections.AttachmentsBackup>
+      <uga:SendEmailConnections.InputTypeBackup>
+        <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:SendEmailConnections.InputTypeBackup>
+    </uga:SendEmailConnections>
+  </Sequence>
+</Activity>
