@@ -23,7 +23,7 @@ This UiPath automation streamlines the order-to-cash process by applying client-
 ## 🔧 Technologies
 
 - UI Automation Activities
-- Conditional Logic (If, Switch)
+- Use Browser Activity and conditions
 - Excel / CSV Data Handling
 
 ---
