@@ -1,4 +1,4 @@
-# 💼 Invoice Discount Automation – UiPath Project
+# 💼 Discount Update Automation
 
 This UiPath automation streamlines the order-to-cash process by applying client-specific discounts to invoices. It uses UI automation and business rule logic to accurately update pricing fields, reducing human error and improving efficiency. It was originally ran was unattended on Studio Web and download for Studio (local) implementation.
 
