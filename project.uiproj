@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Process",
+  "Name": "Receiving and updating invoice with discounts",
+  "Description": null,
+  "MainFile": "Main.xaml"
+}
